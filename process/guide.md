@@ -135,10 +135,10 @@ make "test^quux^stepX"
 If your implementation language is a compiled language, then you
 should also add a Makefile at the top level of your implementation
 directory. This Makefile will define how to build the files pointed to
-by the quux_STEP_TO_PROG macro. The top-level Makefile will attempt to
+by the `quux_STEP_TO_PROG` macro. The top-level Makefile will attempt to
 build those targets before running tests. If it is a scripting
 language/uncompiled, then no Makefile is necessary because
-quux_STEP_TO_PROG will point to a source file that already exists and
+`quux_STEP_TO_PROG` will point to a source file that already exists and
 does not need to be compiled/built.
 
 
