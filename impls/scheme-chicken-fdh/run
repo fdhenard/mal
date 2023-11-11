@@ -1,2 +1,2 @@
 #!/bin/bash
-exec csi -s $(dirname $0)/${STEP:-stepA_mal}.scm "${@}"
+exec csi -R r7rs -s $(dirname $0)/${STEP:-stepA_mal}.scm "${@}"

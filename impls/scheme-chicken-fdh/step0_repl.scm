@@ -1,10 +1,5 @@
 
-;; (use extras)
-
-(import (scheme base)
-        (scheme write)
-        ;; (chicken io)
-        )
+(import (prefix (scheme base) base:))
 
 
 (define (READ x)
@@ -21,7 +16,7 @@
 
 (define (main)
   (display "user> ")
-  (let ([line (read-line)])
+  (let ([line (base:read-line)])
     (if (eof-object? line)
         #f
         (let ([rep-res (rep line)])

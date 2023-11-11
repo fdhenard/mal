@@ -88,26 +88,29 @@ or the [GitHut 2.0 Project](https://madnight.github.io/githut).
 
 * Fork the mal repository on github and then clone your forked
   repository:
-```
-git clone git@github.com:YOUR_NAME/mal.git
-cd mal
-```
+
+	```
+	git clone git@github.com:YOUR_NAME/mal.git
+	cd mal
+	```
 
 * Make a new directory for your implementation. For example, if your
 language is called "quux":
-```
-mkdir impls/quux
-```
+
+	```
+	mkdir impls/quux
+	```
 
 * Modify the top level Makefile.impls to allow the tests to be run against
   your implementation. For example, if your language is named "quux"
   and uses "qx" as the file extension, then make the following
   3 modifications to Makefile.impls:
-```
-IMPLS = ... quux ...
-...
-quux_STEP_TO_PROG = impls/quux/$($(1)).qx
-```
+
+	```
+	IMPLS = ... quux ...
+	...
+	quux_STEP_TO_PROG = impls/quux/$($(1)).qx
+	```
 
 * Add a "run" script to your implementation directory that listens to
   the "STEP" environment variable for the implementation step to run
@@ -117,17 +120,18 @@ quux_STEP_TO_PROG = impls/quux/$($(1)).qx
   scripts for a compiled language and an interpreted language (where
   the interpreter is named "quux"):
 
-```
-#!/bin/bash
-exec $(dirname $0)/${STEP:-stepA_mal} "${@}"
-```
+	```
+	#!/bin/bash
+	exec $(dirname $0)/${STEP:-stepA_mal} "${@}"
+	```
 
-```
-#!/bin/bash
-exec quux $(dirname $0)/${STEP:-stepA_mal}.qx "${@}"
-```
+	```
+	#!/bin/bash
+	exec quux $(dirname $0)/${STEP:-stepA_mal}.qx "${@}"
+	```
 
 This allows you to run tests against your implementation like this:
+
 ```
 make "test^quux^stepX"
 ```
