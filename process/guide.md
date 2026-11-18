@@ -283,6 +283,7 @@ represented directly in the code that the programmer writes
 
 For example, if the string is "(+ 2 (* 3 4))" then the read function
 will process this into a tree structure that looks like this:
+
 ```
           List
          / |  \
